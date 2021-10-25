@@ -5,5 +5,16 @@
 </ion-header>
 
 <ion-content>
+  <ion-item *ngIf="!users">
+    <ion-label text-center>
+      <ion-spinner></ion-spinner>
+    </ion-label>
+  </ion-item>
+
+  <ion-list *ngIf="users">
+    <ion-item *ngFor="let user of users" [routerLink]="['/user', user._id]">
+      <ion-label>{{ user.username }}</ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
