@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-//edit user import?
-import { UserEditPage }   from './user-edit/user-edit.page';
+
 const routes: Routes = [
   {
     path: '',
@@ -27,14 +26,11 @@ const routes: Routes = [
   {
     path: 'user/:userId',
     loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
-  },
-  {
-    path: 'user-edit/:userId',
-    loadChildren: () => import('./user-edit/user-edit.module').then( m => m.UserEditPageModule)
-  }
-
-
-
+  }//,
+  //{
+   // path: 'user-edit/:userId',
+   // loadChildren: () => import('./user-edit/user-edit.module').then( m => m.UserEditPageModule)
+ //}
 ];
 
 @NgModule({

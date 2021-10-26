@@ -3,8 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 
 import { UsersService } from '../users.service';
 import { User } from '../user.model'; 
-//add for delete
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -17,9 +15,7 @@ export class UserPage implements OnInit {
   
   constructor(
     private activatedRoute: ActivatedRoute,
-    private usersService: UsersService,
-    //add for delete
-    private router: Router
+    private usersService: UsersService
   ) { }
 
   ngOnInit() {
@@ -37,15 +33,4 @@ export class UserPage implements OnInit {
       }
     );
   }
-
-    //3. Implement the deleteUser() method -error erlier caused by not importing router
-deleteUser(id: string): void {
-  if(confirm("Are you sure to delete " + this.user.username)) {
-    this.usersService.deleteUser(id).subscribe(
-      ()=>{this.router.navigate(['/users'])}
-    );
-  }
-}
-
-
 }
