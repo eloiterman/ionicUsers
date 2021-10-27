@@ -9,8 +9,8 @@
 
 <ion-content>
     <ion-item *ngIf="!user">
-        <ion-label ion-text-center>
-          <ion-spinner></ion-spinner>
+      <ion-label ion-text-center>
+        <ion-spinner></ion-spinner>
         </ion-label>
       </ion-item>
     
@@ -25,11 +25,16 @@
           <ion-item>{{ user.email  }}</ion-item>
         </ion-list>
     
+
+        <!--button [routerLink]="['/user/edit/', user._id]">Edit</button>
+       
+        <button (click)="deleteUser(user._id)">Delete</button> -->
+       
       </ion-card>
     
       <ion-fab vertical="bottom" horizontal="end">
         <ion-fab-button  color="secondary">
-          <ion-icon name="arrow-dropleft"></ion-icon>
+          <ion-icon name="arrow-back-circle-outline"></ion-icon>
         </ion-fab-button>
     
         <ion-fab-list side="start" *ngIf="user">
@@ -38,11 +43,15 @@
             <ion-icon name="create"></ion-icon>
           </ion-fab-button>
     
-          <ion-fab-button color="danger" [routerLink]="['/user-delete', user._id]">
+          <!--<ion-fab-button color="danger" [routerLink]="['/user-delete', user._id]">-->
+            <ion-fab-button color="danger" (click)="deleteUser(user._id)">
             <ion-icon name="trash"></ion-icon>
           </ion-fab-button>
     
         </ion-fab-list>
+
+  
+
       </ion-fab>
 
 </ion-content>
