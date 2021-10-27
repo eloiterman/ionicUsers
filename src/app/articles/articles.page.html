@@ -6,8 +6,7 @@
 
 <ion-content>
   <h1>Articles</h1>
-  <ul *ngIf="articles">
-    <li *ngFor="let article of articles">
+
       <!--DEVNOTE might not be right path
         *see:
        <ion-item *ngFor="let user of users" [routerLink]="['/user', user._id]">
@@ -24,9 +23,16 @@
 
       **the schema here has .models added here
       -->
-      <a [routerLink]="['/articles/view/', article._id]">{{article.title}}</a>
-    </li>
-  </ul>
+      <!--<a [routerLink]="['/articles/view/', article._id]">{{article.title}}</a>-->
+      
+
+
+
+  <ion-list *ngIf="articles">
+    <ion-item *ngFor="let article of articles" [routerLink]="['/article', article._id]">
+      <ion-label>{{article.title}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 
