@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>articles</ion-title>
+    <ion-title>Articles List</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,6 +8,22 @@
   <h1>Articles</h1>
   <ul *ngIf="articles">
     <li *ngFor="let article of articles">
+      <!--DEVNOTE might not be right path
+        *see:
+       <ion-item *ngFor="let user of users" [routerLink]="['/user', user._id]">
+
+        *Naming pages:
+
+        in this case instead of article-view as in ng-users "view" will be "article"(detail)
+
+        differeces are as follows
+
+        ng has "articles and article view" 
+        
+        here this will be "articles"  and "article" 
+
+      **the schema here has .models added here
+      -->
       <a [routerLink]="['/articles/view/', article._id]">{{article.title}}</a>
     </li>
   </ul>
