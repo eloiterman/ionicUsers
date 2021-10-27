@@ -5,5 +5,12 @@
 </ion-header>
 
 <ion-content>
-
+  <h1>Articles</h1>
+  <ul *ngIf="articles">
+    <li *ngFor="let article of articles">
+      <a [routerLink]="['/articles/view/', article._id]">{{article.title}}</a>
+    </li>
+  </ul>
 </ion-content>
+
+
