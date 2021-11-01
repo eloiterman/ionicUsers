@@ -12,8 +12,7 @@ import { Article } from '../article.model';
   styleUrls: ['./article.page.scss']
 })
 export class ArticlePage implements OnInit {
-  //article:Article = new Article();
-  //articles: Article;
+
   article: Article;
 
   constructor(
@@ -43,15 +42,15 @@ getArticle(id:string):void {
 
 
 
-//DEVNOTE ADD LATER
-  //3. Implement the deleteUser() method
-  /*deleteArticle(id: string): void {
+//DEVNOTE 
+  //3. Implement the delete() method
+  deleteArticle(id: string): void {
     if(confirm("Are you sure to delete " + this.article.title)) {
       this.articlesService.deleteArticle(id).subscribe(
         ()=>{this.router.navigate(['/articles'])}
       );
     }
-  }*/
+  }
 
 
 }

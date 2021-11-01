@@ -30,11 +30,7 @@ export class ArticlesPage implements OnInit {
   }
 
   // 5. Create a local wrapper for
-/*
-  getArticle(id: string): Observable<Article> {
-    return this.http.get<Article>(`${this.url}/${id}`);
-  }*/
-  
+
   getArticles(): void {
     this.articlesService.getArticles().subscribe(
       (response:any) => {
@@ -43,7 +39,15 @@ export class ArticlesPage implements OnInit {
       }
     );
   }
-
+/*
+  deleteArticle(id:string): void {
+    if (confirm("Are you sure to delete " + this.article.title)) {
+      this.articlesService.deleteArticle(id).subscribe(
+        () => { this.router.navigate(['/articles']) }
+    );
+    }
+  }  
+*/
 
 
 }

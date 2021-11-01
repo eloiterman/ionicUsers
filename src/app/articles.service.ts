@@ -34,21 +34,13 @@ export class ArticlesService {
   getArticle(id: string): Observable<Article> {
     return this.http.get<Article>(`${this.url}/${id}`);
   }
-  /*
-  createArticle (article: Article): Observable<Article> {
-    return this.http.post<Article>(this.url, article, httpOptions);
-  }
-
-  editArticle (article: Article): Observable<Article> {
-    return this.http.put<Article>(this.url, article, httpOptions);
-  }
-
-  deleteArticle (id: string): Observable<Article> {
-    return this.http.delete<Article>(`${this.url}/${id}`);
-  }
-
-*/
-
+ 
+updateArticle(article: Article): Observable<Article>{
+  return this.http.put<Article>(this.url, article, httpOptions);
+}
+deleteArticle(id:String): Observable<Article> {
+  return this.http.delete<Article>(`${this.url}/${id}`, httpOptions);
+}
 
 }
 
