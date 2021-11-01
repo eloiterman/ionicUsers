@@ -42,6 +42,10 @@ const routes: Routes = [
   {
     path: 'article/:articleId',
     loadChildren: () => import('./article/article.module').then( m => m.ArticlePageModule)
+  },
+  {
+    path: 'article-edit',
+    loadChildren: () => import('./article-edit/article-edit.module').then( m => m.ArticleEditPageModule)
   }
 ];
 
